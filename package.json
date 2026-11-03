@@ -1,7 +1,7 @@
 {
   "name": "zpl",
   "private": true,
-  "version": "0.35.0",
+  "version": "0.35.1",
   "type": "module",
   "imports": {
     "#/*": "./src/*"
@@ -16,7 +16,8 @@
     "format": "prettier --write . && eslint --fix",
     "check": "prettier --check .",
     "deploy": "bun run build && wrangler deploy",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "dependencies": {
     "@codemirror/commands": "^6.11.1",
