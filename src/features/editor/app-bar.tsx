@@ -5,6 +5,7 @@ import {
   IconPlus,
   IconZoomScan,
 } from '@tabler/icons-react'
+import { Link } from '@tanstack/react-router'
 import { shallow, useSelector } from '@tanstack/react-store'
 
 import { Button } from '#/components/ui/button'
@@ -27,6 +28,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '#/components/ui/tooltip'
+import { appVersion } from '#/lib/version'
 import { m } from '#/paraglide/messages'
 import { FileLibrary } from './file-library'
 import { FileTabs } from './file-tabs'
@@ -78,7 +80,27 @@ export function AppBar({
       <div className="shrink-0 xl:hidden">
         <ViewMenu {...compareProps} />
       </div>
+      <VersionLink />
     </header>
+  )
+}
+
+/** The running version, linking to what changed in it. */
+function VersionLink() {
+  return (
+    <Button
+      variant="ghost"
+      size="xs"
+      asChild
+      className="ml-1 hidden shrink-0 font-mono text-muted-foreground sm:inline-flex"
+    >
+      <Link
+        to="/changelog"
+        aria-label={m.app_version_label({ version: appVersion })}
+      >
+        {m.app_version({ version: appVersion })}
+      </Link>
+    </Button>
   )
 }
 

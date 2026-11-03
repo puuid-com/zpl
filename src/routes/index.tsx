@@ -27,12 +27,14 @@ import { EditorPanel } from '#/features/editor/editor-panel'
 import { openShareLink } from '#/features/editor/share-link'
 import { addFile, editorStore, setActiveFile } from '#/features/editor/store'
 import { useMediaQuery } from '#/hooks/use-media-query'
+import { SITE_URL } from '#/lib/site'
 import { m } from '#/paraglide/messages'
 
 /** Keeps the editor and the panel's toolbar usable when panels are squeezed. */
 const MIN_PANEL_WIDTH = 280
 
 export const Route = createFileRoute('/')({
+  head: () => ({ links: [{ rel: 'canonical', href: SITE_URL }] }),
   // CodeMirror and the canvas renderer only run in the browser.
   ssr: false,
   beforeLoad: ({ location, preload }) => {

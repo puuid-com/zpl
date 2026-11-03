@@ -115,5 +115,15 @@
   "remove_disk_file_hint": "This removes the file from this list. The file on disk is kept.",
   "remove_file": "Remove file",
   "remove_file_named": "Remove {name}",
-  "remove_file_title": "Remove {name}?"
+  "remove_file_title": "Remove {name}?",
+  "changelog_title": "Changelog",
+  "changelog_description": "New features, changes and fixes in the ZPL editor, newest first.",
+  "changelog_latest": "Latest",
+  "changelog_show_all": "Show all {count} changes",
+  "changelog_show_fewer": "Show fewer",
+  "changelog_before": "Before",
+  "changelog_after": "After",
+  "changelog_back": "Back to the editor",
+  "app_version": "v{version}",
+  "app_version_label": "Version {version}, see the changelog"
 }
